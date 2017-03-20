@@ -33,7 +33,7 @@ class Word2Vec():
 
     #Configuration
     batch_size = 20
-    embedding_size = 2 # This is just for visualization. If the embedding_size is changed, the below code also should be modified.
+    embedding_size = 2 # This is just for visualization.
     num_sampled = 15 # Number of negative examples to sample
 
     def __init__(self, batch_size =20, embedding_size=2,num_sampled=15):
