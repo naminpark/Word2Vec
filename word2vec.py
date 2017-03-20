@@ -128,7 +128,7 @@ class Word2Vec():
         nce_weights = tf.Variable(tf.random_uniform([self.voc_size, self.embedding_size], -1.0, 1.0))
         nce_biases = tf.Variable(tf.zeros([self.voc_size]))
 
-
+        # tf.nn.nce_loss can be substituted with tf.nn.sampled_softmax_loss 
         _loss=tf.nn.nce_loss(nce_weights, nce_biases, self.train_labels,  embed, self.num_sampled, self.voc_size)
         # Compute the average NCE loss for the batch
         self.loss = tf.reduce_mean(_loss)
